@@ -1,1 +1,1 @@
-ER Diagram Chen Notation Example
+chen notation er diagram example
