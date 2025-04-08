@@ -1,0 +1,77 @@
+σ , π , ∪ , ∩ , − , ⨯ , ⨝ , ÷
+
+
+a -) Her bir kitabın başlığını ve yılını listeleyiniz.
+
+A -) π_baslik,yil (KITAP)
+
+
+b -) Bölümü IIS olan öğrencilerin tüm bilgilerini listeleyiniz
+
+B -) σ_bolum='IIS' (OGRENCI)
+
+
+c -) Tüm öğrencileri ödünç alabilecekleri kitaplarla listeleyiniz.
+
+C -) OGRENCI ⨯ (KITAP − π_kitapID (ODUNC))
+
+
+d -) SAÜ tarafından 1990 yılından önce yayınlanan tüm kitapları listeleyiniz
+
+D -) σ_yayinci='SAU' ∧ yil<1990 (KITAP)
+
+
+e -) Sakarya'da yaşayan yazarların isimlerini listeleyiniz.
+
+E -) π_YAdi (σ_adres='Sakarya' (YAZAR))
+
+
+f -) 30 yaşından büyük ve IIS de olmayan öğrencilerin adını listeleyiniz.
+
+F -) π_OgrAdi (σ_yas>30 (OGRENCI - σ_bolum='IIS' (OGRENCI)))
+
+
+g -) YAdi alanını Adi olarak değiştiriniz.
+
+G -) ?
+
+
+h -) IIS de okuyan ve bir kitap ödünç alan tüm öğrencileri listeleyiniz.
+
+H -) σ_bolum='IIS' (OGRENCI ⨝ ODUNC)
+
+
+i -) 'Ali' tarafından yazılan kitapların başlıklarını listeleyiniz. (kartezyen)
+
+İ -) π_baslik (KITAP ⨯ σ_YAdi='Ali' (YAZILMIS))
+
+
+j -) 'Ali' tarafından yazılan kitapların 'veritabanı' anahtarı içermeyen kitapların başlıklarını listeleyiniz.
+
+J -) π_baslik (σ_YAdi='Ali' (ACIKLAMA - σ_Anahtar='veritabanı' (ACIKLAMA) ⨝ KITAP ⨝ YAZILMIS))
+
+
+k -) Her bir kitabı anahtarlarıyla birlikte listeleyiniz.(Anahtarı olmayan kitapların listelenmediğine dikkat edin.)
+
+K -) KITAP ⨝ ACIKLAMA
+
+
+l -) Her öğrenciyi ödünç aldığı kitaplarla birlikte listeleyiniz.
+
+L -) OGRENCI ⨝ ODUNC ⨝ KITAP
+
+
+m -) 'YASİN' isimli yazarlar tarafından yazılan kitapların başlıklarını listeleyiniz.(join)
+
+M -) π_baslik (σ_YAdi='YASİN' (YAZILMIS) ⨝ KITAP)
+
+
+n -) 'Veli' isimli öğrencinin ödünç aldığı kitapların yazarlarını listeleyiniz.
+
+N -) π_YAdi (σ_OgrAdi='Veli' (OGRENCI ⨝ ODUNC) ⨝ KITAP)
+
+
+
+o -) Hangi kitaplar 'veritabanı' ve 'programlama' anahtarlarının her ikisine de sahiptir?
+
+O -) (σ_Anahtar='veritabanı' (ACIKLAMA) ∩ σ_Anahtar='programlama' (ACIKLAMA)) ⨝ KITAP
