@@ -1,0 +1,1 @@
+İlişkisel cebir ödevi
